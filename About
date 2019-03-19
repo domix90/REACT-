@@ -31,3 +31,10 @@ lines of JSX in parentheses to avoid the pitfalls of automatic semicolon inserti
 
 Why use parenthesis on JavaScript return statements?
 http://jamesknelson.com/javascript-return-parenthesis/
+
+
+In React I can create my own tags thanks to JSX. A JSX tag can not only represent an HTML element (like <h1>, <span>, and <header>), 
+it can also represent a user-defined component, so for instance in the above example, I used self-closing tag "<Header />" 
+to refer to "function Header()". I can now refer to this component anywhere in my app to render this element on the page. 
+
+
