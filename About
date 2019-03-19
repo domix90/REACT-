@@ -1,0 +1,33 @@
+A component is a piece of UI that you can reuse. 
+Just like you're able to reuse code in JavaScript with functions, a component lets you reuse code that renders a part of your UI.
+
+
+Creating a component in React is a 2 step process: 
+
+1st. - Define the component as a function or a class 
+2nd. - Display the component in the UI with a JSX tag
+
+Simple static component can look like this: 
+
+function Header() {
+
+  return (
+
+  <header>
+    <h1> Scoreboard </h1>
+    <span className="stats"> Players: 1 </span>
+  </header> 
+);
+}
+
+ReactDOM.render(
+  <Header />
+  document.getElementById('root')
+
+);
+
+While it isn’t required, the React docs recommend wrapping multiple 
+lines of JSX in parentheses to avoid the pitfalls of automatic semicolon insertion.
+
+Why use parenthesis on JavaScript return statements?
+http://jamesknelson.com/javascript-return-parenthesis/
