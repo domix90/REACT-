@@ -1,0 +1,76 @@
+const Header = (props) => {
+  return (
+    <header>
+      <h1>{props.title}</h1>
+      <span className="stats">Players: { props.totalPlayers }</span>
+    </header>
+  );
+}
+
+const Player = (props) => {
+  return (
+    <div className="player">
+      <span className="player-name">
+        { props.name }
+      </span>
+
+      <Counter score={35}/>
+    </div>
+  );
+}
+
+const Counter = (props) => {
+  return (
+    <div className="counter">
+      <button className="counter-action decrement"> - </button>
+      <span className="counter-score">{ props.score }</span>
+      <button className="counter-action increment"> + </button>
+    </div>
+  );
+}
+
+const App = () => {
+  return (
+    <div className="scoreboard">
+      <Header title="scoreboard" totalPlayers={1} />
+
+      {/* Players list */}
+      <Player name="Guil" />
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
+
+------------------------------------------------------------------------------------------------------------
+SOLUTION 
+
+We know that props.initialPlayers is an array of players.
+
+[{ name: "Guil", score: 40}, {name: "Treasure", score: 85}, {name: "Ashley", score: 95}, { name: "James", score: 80}];
+JavaScript arrays have a function called map, that take a function and applies it or maps it to every item on that array. It then returns a new array with the mapped values. The mapping function for the video was this:
+
+player => <Player name={player.name} score={player.score}/>;
+So every object within the players array is mapped into a Players component that we declared previously. It takes the player objects's name and score properties and uses them as arguments for the Player component.
+
+{ name: "Guil", score: 40} into this <Player name="Guil" score=40/>
+
+The final result would look something like this :
+
+<div className="scoreboard">
+      <Header 
+        title="scoreboard" 
+        totalPlayers={props.initialPlayers.length} />
+
+      {/* Players list */}
+      [
+        <Player name="Guil" score=40>,
+        <Player name="Treasure" score=85>,
+        <Player name="Ashley" score=95>,
+        <Player name="James" score=80>
+      ]
+      )}
+</div>
