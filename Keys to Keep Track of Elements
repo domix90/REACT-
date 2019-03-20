@@ -1,0 +1,13 @@
+React manages what gets rendered to the DOM. In order for this process to be fast and efficient, 
+React needs a way to quickly know which items were changed, added, or removed. For this, 
+React gives elements a special built-in prop named key. 
+A key is a unique identifier that gives React a way to quickly and reliably identify an element in a list.
+
+
+Keys – React docs 
+https://reactjs.org/docs/lists-and-keys.html#keys
+
+We don’t recommend using indexes for keys if the order of items may change. 
+This can negatively impact performance and may cause issues with component state. 
+Check out Robin Pokorny’s article for an in-depth explanation on the negative impacts of using an index as a key.(https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) 
+If you choose not to assign an explicit key to list items then React will default to using indexes as keys.
