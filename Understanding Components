@@ -38,3 +38,14 @@ ReactDOM.render(
   document.getElementById('root')
 
 );
+
+
+When a component contains another component, it's called composition. Composing components is a core principle in React. Parent usually have components with one or many child components. 
+This gives the parent component the ability to control how its child components are rendered.
+
+With React, I never touch the actual DOM directly. 
+React only manages what gets rendered into the DOM, so it can be tricky to debug your UI in the browser
+
+For help with debugging the app USE : 
+
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related?hl=en
