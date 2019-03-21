@@ -7,3 +7,30 @@ https://reactjs.org/docs/faq-state.html
 
 Adding Local State to a Class – React docs
 https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
+
+
+    
+class Counter extends React.Component {
+  
+ ----> constructor() {
+    super()
+    this.state = {
+      score: 0 
+      
+    };  <--------- This is a method we need to use for initializing state in the class component
+  
+  }
+  
+  render() {
+  
+    return (
+    
+      <div className="counter">
+        <button className="counter-action decrement"> - </button>
+        <span className="counter-score"> {this.state.score} </span> <-------- then I reference this.state + the data I want to reference
+        <button className="counter-action increment"> + </button>
+      </div>
+    
+    );
+  }  
+}
