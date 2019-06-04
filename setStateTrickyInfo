@@ -1,0 +1,22 @@
+React will try to group or batch setState calls into a single call, which leads us to our first “gotcha”:
+------------------------------------------------
+// assuming this.state = { value: 0 };
+this.setState({ value: this.state.value + 1});
+this.setState({ value: this.state.value + 1});
+this.setState({ value: this.state.value + 1});
+After all the above calls are processed this.state.value will be 1, not 3.
+
+Solution to it is : 
+
+setState accepts a function as its parameter
+-----------------------------------------------
+
+If you pass a function as the first argument of setState, React will call it with the at-call-time-current state and expect you to return an Object to merge into state. So updating our example above to:
+
+// assuming this.state = { value: 0 };
+this.setState((state) => ({ value: state.value + 1}));
+this.setState((state) => ({ value: state.value + 1}));
+this.setState((state) => ({ value: state.value + 1}));
+
+Will give us this.state.value = 3 like we expected in the first place. 
+Remember to always use this syntax when updating state to a value, which is computed based on previous state!
